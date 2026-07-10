@@ -1,0 +1,306 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#2d1b69,#6a4cff,#9b5cff);
+    background-size:400% 400%;
+    animation:fondo 12s ease infinite;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* Fondo animado */
+
+@keyframes fondo{
+
+    0%{background-position:0% 50%;}
+
+    50%{background-position:100% 50%;}
+
+    100%{background-position:0% 50%;}
+
+}
+
+/* Barra */
+
+.progreso{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:8px;
+
+    background:#d8cfff;
+
+    z-index:999;
+
+}
+
+.barra{
+
+    width:20%;
+
+    height:100%;
+
+    background:#7b2cff;
+
+    transition:.6s;
+
+}
+
+/* Pantallas */
+
+.pantalla{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:absolute;
+
+}
+
+.oculto{
+
+    display:none;
+
+}
+
+/* Tarjeta */
+
+.card{
+
+    width:90%;
+
+    max-width:700px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+    animation:aparecer .7s;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+h1{
+
+    color:#6d28d9;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    color:#7b2cff;
+
+    margin-bottom:20px;
+
+}
+
+p{
+
+    font-size:20px;
+
+    line-height:35px;
+
+    color:#444;
+
+    margin-bottom:30px;
+
+}
+
+/* Botones */
+
+button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#7b2cff;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    background:#9d62ff;
+
+}
+
+/* Contador */
+
+.tiempo{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:35px 0;
+
+}
+
+.caja{
+
+    width:110px;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    background:#f6f1ff;
+
+}
+
+.caja span{
+
+    display:block;
+
+    font-size:36px;
+
+    color:#6d28d9;
+
+    font-weight:bold;
+
+}
+
+.caja small{
+
+    font-size:16px;
+
+}
+
+/* Celular */
+
+@media(max-width:700px){
+
+.card{
+
+padding:30px 20px;
+
+}
+
+p{
+
+font-size:18px;
+
+line-height:30px;
+
+}
+
+.caja{
+
+width:90px;
+
+}
+
+.caja span{
+
+font-size:28px;
+
+}
+
+}
+/* Animación de aparición de pantallas */
+.pantalla:not(.oculto) .card {
+    animation: aparecerCarta 1s ease;
+}
+
+@keyframes aparecerCarta {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Efecto suave en botones */
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+/* Botón de música 🎵 */
+.musicaBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #b84cff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(184, 76, 255, 0.6);
+}
+
+.musicaBtn:hover {
+    transform: scale(1.05);
+}
